@@ -6,7 +6,21 @@ namespace DobórGwintówTocznych
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("APLIKACJA DOBORU GWINTÓW TOCZNYCH");
+            Console.Write("Proszę wybrać sposób łożyskowania (11 - pojedyncze łożyskowanie, 22 - podwójne łożyskowanie): ");
+            int idLoz = Convert.ToInt32(Console.ReadLine());
+            int wspLozyskowania = ParametryObliczeniowe.slowWspLozyskowania[idLoz];
+            Dane.UtworzDane();
+
+
+
+
+
+
+
+
         }
+
+        
     }
 }
