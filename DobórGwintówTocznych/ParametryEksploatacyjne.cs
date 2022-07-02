@@ -20,7 +20,7 @@ namespace DobórGwintówTocznych
 
         enum AgresywnoscSrodowiska
         {
-            Neutralne = 1, Agresywne = 1
+            Neutralne = 1, Agresywne = 2
         }
         enum RodzajSmarowania
         {
