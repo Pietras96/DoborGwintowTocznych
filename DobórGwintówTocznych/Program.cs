@@ -11,16 +11,6 @@ namespace DobórGwintówTocznych
             int idLoz = Convert.ToInt32(Console.ReadLine());
             int wspLozyskowania = ParametryObliczeniowe.slowWspLozyskowania[idLoz];
             Dane.UtworzDane();
-
-
-
-
-
-
-
-
-        }
-
-        
+        }      
     }
 }
