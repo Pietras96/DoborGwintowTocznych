@@ -11,12 +11,18 @@ namespace DobórGwintówTocznych
             //Console.Write("Proszę wybrać sposób łożyskowania (11 - pojedyncze łożyskowanie, 22 - podwójne łożyskowanie): ");
             //int idLoz = Convert.ToInt32(Console.ReadLine());
             //int wspLozyskowania = ParametryObliczeniowe.slowWspLozyskowania[idLoz];
-            ObliczeniaGwintyToczne og = new ObliczeniaGwintyToczne();
-            og.WykonajObliczenia();
+            ObliczeniaGwintyToczne ogt = new ObliczeniaGwintyToczne();
+            ogt.WykonajObliczenia();
+            var mechanizm = new DoborMechanizmuSrubowoTocznego(ogt);
+            var wynik = mechanizm.WstepnyDoborMechanizmu();
+            ogt.dobranyMechanizm = wynik;
+            var sztywnosc = ogt.ObliczSztywnoscMechanizmu();
+            wynik = mechanizm.KoncowyDoborMechanizmu();
+            Console.WriteLine(mechanizm);
             Console.WriteLine("ELO");
-            
-            
-            
-        }    
-    }         
+
+
+
+        }
+    }
 }

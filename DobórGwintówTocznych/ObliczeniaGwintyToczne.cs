@@ -7,19 +7,22 @@ using System.Threading.Tasks;
 
 namespace DobórGwintówTocznych
 {
-    class ObliczeniaGwintyToczne: Dane
+    public class ObliczeniaGwintyToczne: Dane
     {
         // Double, float czy decimal?
-        double obciazenie = 0;
-        double naprezenie = 0;
-        double dlugoscCalkowita = 0;
-        int okresUzytk = 0;
-        int nosnoscDyn = 0;
-        int silaOsiowa=0;
-        double sztywnoscSruby = 0;
-        double sztywnoscNakretki = 0;
-        double srednicaRdzenia = 0;
-        int dlSrubyBezPodpory = 0;
+       
+        public double obciazenie = 0;
+        public double naprezenie = 0;
+        public double dlugoscCalkowita = 0;
+        public int okresUzytk = 0;
+        public int nosnoscDynamiczna = 0;
+        public int silaOsiowa =0;
+        public double sztywnoscSruby = 0;
+        public double sztywnoscNakretki = 0;
+        public double srednicaRdzenia = 0;
+        public int dlSrubyBezPodpory = 0;
+        public double sztywnoscMechanizmu = 0;
+        public MechaniznySrubowoToczne dobranyMechanizm;
 
 
         public ObliczeniaGwintyToczne() : base()
@@ -35,8 +38,10 @@ namespace DobórGwintówTocznych
             ObliczSileOsiowa();
             ObliczNosnoscDynamiczna();
             Console.WriteLine($"Wyniki Obliczeń: \n długość całkowita śruby = {dlugoscCalkowita} [mm] \n obciążenie robocze = {obciazenie} [N] \n naprężenie wstępne = {naprezenie} [N]");
-            Console.WriteLine($" zakładany okres użytkowania {string.Format("{0:#.##E+00}", okresUzytk)} [h] \n nośność dynamiczna: {nosnoscDyn} [N]");
+            Console.WriteLine($" zakładany okres użytkowania {string.Format("{0:#.##E+00}", okresUzytk)} [h] \n nośność dynamiczna: {nosnoscDynamiczna} [N]");
         }
+
+        
         public double ObliczDlugoscCalkowitaSruby()
         {
             dlugoscCalkowita = DlugoscGwintuSruby + (2 * DlugoscCzopaLozyskowego);
@@ -73,19 +78,35 @@ namespace DobórGwintówTocznych
 
         public int ObliczNosnoscDynamiczna()
         {
-            nosnoscDyn = Convert.ToInt32((double)silaOsiowa * Math.Pow(okresUzytk / Math.Pow(10, 6), (double)1/3)); 
-            return nosnoscDyn;
+            nosnoscDynamiczna = Convert.ToInt32(silaOsiowa * Math.Pow(okresUzytk / Math.Pow(10, 6), (double)1/3)); 
+            return nosnoscDynamiczna;
+        }
+
+        public double ObliczSredniceRdzenia()
+        {
+            srednicaRdzenia = dobranyMechanizm.srednicaZnam - dobranyMechanizm.sredKulki;
+            return srednicaRdzenia;
         }
 
         public double ObliczSztywnoscSruby()
         {
-            sztywnoscSruby = 168 * ()
+            sztywnoscSruby = 168 * (Math.Pow(srednicaRdzenia, 2) / DlugoscGwintuSruby);
             return sztywnoscSruby;
         }
 
         public double ObliczSztywnoscNakretki()
         {
+            sztywnoscNakretki = 0.8 * dobranyMechanizm.sztywnosc * Math.Pow(naprezenie / (0.1 * dobranyMechanizm.nosnoscDynamiczna), (double)1/3);
             return sztywnoscNakretki;
+        }
+
+        public double ObliczSztywnoscMechanizmu()
+        {
+            ObliczSredniceRdzenia();
+            ObliczSztywnoscNakretki();
+            ObliczSztywnoscSruby();
+            sztywnoscMechanizmu = (double)(1 / sztywnoscSruby) + (double)(1 / sztywnoscNakretki);
+            return (double)(1 / sztywnoscMechanizmu);
         }
 
 

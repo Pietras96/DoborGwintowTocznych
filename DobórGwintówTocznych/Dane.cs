@@ -89,17 +89,7 @@ namespace DobórGwintówTocznych
 
         public List<ObciazenieRobocze> ListaObciazeniaRobocze = new List<ObciazenieRobocze>();
 
-        public List<MechaniznySrubowoToczne> ListaMechanizmowFSV = new List<MechaniznySrubowoToczne>
-        {
-            new MechaniznySrubowoToczne {model = "16-5B1", srednicaZnam = 16, skokGwintu = 5, sredKulki = 2.381, obiegi = "2,5x1", sztywnosc = 160, nosnoscDynamiczna = 7630},
-            new MechaniznySrubowoToczne {model = "16-10B1", srednicaZnam = 16, skokGwintu = 10, sredKulki = 3.175, obiegi = "2,5x1", sztywnosc = 160, nosnoscDynamiczna = 7630},
-            new MechaniznySrubowoToczne {model = "20-5B1", srednicaZnam = 20, skokGwintu = 5, sredKulki = 3.175, obiegi = "2,5x1", sztywnosc = 190, nosnoscDynamiczna = 8370},
-            new MechaniznySrubowoToczne {model = "20-20A1", srednicaZnam = 20, skokGwintu = 20, sredKulki = 3.969, obiegi = "1,5x1", sztywnosc = 130, nosnoscDynamiczna = 7190},
-            new MechaniznySrubowoToczne {model = "25-5B2", srednicaZnam = 25, skokGwintu = 5, sredKulki = 3.175, obiegi = "2,5x2", sztywnosc = 460, nosnoscDynamiczna = 17040},
-            new MechaniznySrubowoToczne {model = "25-10B1", srednicaZnam = 25, skokGwintu = 10, sredKulki = 4.763, obiegi = "2,5x1", sztywnosc = 250, nosnoscDynamiczna = 15920},
-            new MechaniznySrubowoToczne {model = "25-16B1", srednicaZnam = 25, skokGwintu = 16, sredKulki = 4.763, obiegi = "2,5x1", sztywnosc = 280, nosnoscDynamiczna = 15920},
-
-        };
+      
 
 
 
