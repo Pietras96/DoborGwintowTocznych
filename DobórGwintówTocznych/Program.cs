@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DobórGwintówTocznych
 {
@@ -6,11 +7,16 @@ namespace DobórGwintówTocznych
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("APLIKACJA DOBORU GWINTÓW TOCZNYCH");
-            Console.Write("Proszę wybrać sposób łożyskowania (11 - pojedyncze łożyskowanie, 22 - podwójne łożyskowanie): ");
-            int idLoz = Convert.ToInt32(Console.ReadLine());
-            int wspLozyskowania = ParametryObliczeniowe.slowWspLozyskowania[idLoz];
-            Dane.UtworzDane();
-        }      
-    }
+            //Console.WriteLine("APLIKACJA DOBORU GWINTÓW TOCZNYCH");
+            //Console.Write("Proszę wybrać sposób łożyskowania (11 - pojedyncze łożyskowanie, 22 - podwójne łożyskowanie): ");
+            //int idLoz = Convert.ToInt32(Console.ReadLine());
+            //int wspLozyskowania = ParametryObliczeniowe.slowWspLozyskowania[idLoz];
+            ObliczeniaGwintyToczne og = new ObliczeniaGwintyToczne();
+            og.WykonajObliczenia();
+            Console.WriteLine("ELO");
+            
+            
+            
+        }    
+    }         
 }
