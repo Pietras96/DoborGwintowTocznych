@@ -22,7 +22,7 @@ namespace DobórGwintówTocznych
         public double srednicaRdzenia = 0;
         public int dlSrubyBezPodpory = 0;
         public double sztywnoscMechanizmu = 0;
-        public MechaniznySrubowoToczne dobranyMechanizm;
+        public MechanizmySrubowoToczne dobranyMechanizm;
 
 
         public ObliczeniaGwintyToczne() : base()

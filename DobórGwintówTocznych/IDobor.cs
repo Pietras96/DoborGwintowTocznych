@@ -8,8 +8,8 @@ namespace DobórGwintówTocznych
 {
     interface IDobor
     {
-        MechaniznySrubowoToczne WstepnyDoborMechanizmu();
-        MechaniznySrubowoToczne KoncowyDoborMechanizmu();
+        MechanizmySrubowoToczne WstepnyDoborMechanizmu();
+        MechanizmySrubowoToczne KoncowyDoborMechanizmu();
        
     }
 }

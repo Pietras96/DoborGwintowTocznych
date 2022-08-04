@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DobórGwintówTocznych
 {
-    public class MechaniznySrubowoToczne
+    public class MechanizmySrubowoToczne
     {
         public string model;
         public int srednicaZnam;

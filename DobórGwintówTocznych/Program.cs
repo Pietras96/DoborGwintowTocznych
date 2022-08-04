@@ -19,6 +19,7 @@ namespace DobórGwintówTocznych
             var sztywnosc = ogt.ObliczSztywnoscMechanizmu();
             wynik = mechanizm.KoncowyDoborMechanizmu();
             Console.WriteLine(mechanizm);
+            var przekladnia = new ObliczeniaPrzekladnia(ogt, wynik);
             Console.WriteLine("ELO");
 
 
