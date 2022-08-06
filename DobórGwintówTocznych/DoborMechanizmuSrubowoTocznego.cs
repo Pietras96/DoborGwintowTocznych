@@ -17,12 +17,12 @@ namespace DobórGwintówTocznych
 
         public MechanizmySrubowoToczne WstepnyDoborMechanizmu()
         {
-            dobranyMechanizm = ListaMechanizmowFSV.Select(x => x).Where(x => x.skokGwintu == Obliczenia.SkokGwintu && Obliczenia.nosnoscDynamiczna < x.nosnoscDynamiczna).FirstOrDefault();
+            dobranyMechanizm = ListaMechanizmowFSV.Select(x => x).Where(x => x.skokGwintu == Obliczenia.Dane.SkokGwintu && Obliczenia.nosnoscDynamiczna < x.nosnoscDynamiczna).FirstOrDefault();
             return dobranyMechanizm;
         }
         public MechanizmySrubowoToczne KoncowyDoborMechanizmu()
         {
-            dobranyMechanizm = ListaMechanizmowFSV.Select(x => x).Where(x => x.skokGwintu == Obliczenia.SkokGwintu && Obliczenia.nosnoscDynamiczna < x.nosnoscDynamiczna && Obliczenia.sztywnoscMechanizmu < x.sztywnosc).FirstOrDefault();
+            dobranyMechanizm = ListaMechanizmowFSV.Select(x => x).Where(x => x.skokGwintu == Obliczenia.Dane.SkokGwintu && Obliczenia.nosnoscDynamiczna < x.nosnoscDynamiczna && Obliczenia.sztywnoscMechanizmu < x.sztywnosc).FirstOrDefault();
             return dobranyMechanizm;
         }
 
@@ -50,5 +50,7 @@ namespace DobórGwintówTocznych
         };
 
         public ObliczeniaGwintyToczne Obliczenia { get; }
+
+        private Dane dane;
     }
 }

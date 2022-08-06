@@ -11,37 +11,28 @@ namespace DobórGwintówTocznych
 
         public DanePrzekladnia()
         {
-            ciezarStolu = OdczytajInt(DaneKomunikaty.ciezarStolu);
-            CiezarPrzedmiotu = OdczytajInt(DaneKomunikaty.CiezarPrzedmiotu);
-            przyspieszenie = OdczytajInt(DaneKomunikaty.przyspieszenie);
-            silaOsiowa = (ciezarPrzedmiotu + ciezarStolu)*10;
-            srednicaSilnika = OdczytajInt(DaneKomunikaty.srednicaSilnika);
-            dlugoscSilnika = OdczytajInt(DaneKomunikaty.dlugoscSilnika);
-            srednicaG1 = OdczytajInt(DaneKomunikaty.srednicaG1);
-            srednicaG2 = OdczytajInt(DaneKomunikaty.srednicaG2);
-            szerokoscKola = OdczytajInt(DaneKomunikaty.szerokoscKola);
-            liczbaZebowG1 = OdczytajInt(DaneKomunikaty.liczbaZebowG1);
-            liczbaZebowG2 = OdczytajInt(DaneKomunikaty.liczbaZebowG2);
+            
 
         }
         public const double wspTarciaProwadnicy = 0.2;
         public const double momentLozyska = 0.1;
         public const double wspolczynnikSprawnosci = 0.8;
         public const double ciezarWlasciwyStali = 7850;
-        public int obciazenieRobocze = 0;
-        public int silaOsiowa = 0;
 
-        private int ciezarStolu;
+        public int silaOsiowa { get; set; }
 
-        public int CiezarStolu
+
+        private double ciezarStolu;
+
+        public double CiezarStolu
         {
             get { return ciezarStolu; }
             set { if (value > 0) ciezarStolu = value; }
         }
 
-        private int ciezarPrzedmiotu;
+        private double ciezarPrzedmiotu;
 
-        public int CiezarPrzedmiotu
+        public double CiezarPrzedmiotu
         {
             get { return ciezarPrzedmiotu; }
             set { if (value > 0) ciezarPrzedmiotu = value; }
@@ -107,9 +98,33 @@ namespace DobórGwintówTocznych
             get { return liczbaZebowG2; }
             set { liczbaZebowG2 = value; }
         }
+        public void PobierzDane()
+        {
+            ciezarStolu = 100;
+            ciezarPrzedmiotu = 50;
+            przyspieszenie = 150;
+            silaOsiowa = 1500;
+            srednicaSilnika = 40;
+            dlugoscSilnika = 160;
+            srednicaG1 = 60;
+            srednicaG2 = 180;
+            szerokoscKola = 20;
+            liczbaZebowG1 = 35;
+            liczbaZebowG2 = 100;
+            //ciezarStolu = OdczytajInt(DaneKomunikaty.ciezarStolu);
+            //ciezarPrzedmiotu = OdczytajInt(DaneKomunikaty.CiezarPrzedmiotu);
+            //przyspieszenie = OdczytajInt(DaneKomunikaty.przyspieszenie);
+            //silaOsiowa = (ciezarPrzedmiotu + ciezarStolu)*10;
+            //srednicaSilnika = OdczytajInt(DaneKomunikaty.srednicaSilnika);
+            //dlugoscSilnika = OdczytajInt(DaneKomunikaty.dlugoscSilnika);
+            //srednicaG1 = OdczytajInt(DaneKomunikaty.srednicaG1);
+            //srednicaG2 = OdczytajInt(DaneKomunikaty.srednicaG2);
+            //szerokoscKola = OdczytajInt(DaneKomunikaty.szerokoscKola);
+            //liczbaZebowG1 = OdczytajInt(DaneKomunikaty.liczbaZebowG1);
+            //liczbaZebowG2 = OdczytajInt(DaneKomunikaty.liczbaZebowG2);
+        }
 
-       
-        
+
 
 
     }

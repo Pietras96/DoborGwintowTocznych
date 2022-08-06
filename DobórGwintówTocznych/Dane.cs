@@ -23,26 +23,7 @@ namespace DobórGwintówTocznych
 
         public Dane()
         {
-            SkokGwintu = OdczytajInt(DaneKomunikaty.SkokGwintu);
-            DlugoscGwintuSruby = OdczytajInt(DaneKomunikaty.DlugoscGwintu);
-            DlugoscCzopaLozyskowego = OdczytajInt(DaneKomunikaty.DlugoscCzopa);
-            SredniaPredkoscObrotowa = OdczytajInt(DaneKomunikaty.SredniaPredkoscObrotowa);
-            ZakladanyOkresUzytkowania = OdczytajInt(DaneKomunikaty.OkresUzytkowania);
-
-            int i = 0;
-
-            do
-            {
-                var obc = new ObciazenieRobocze();
-                ListaObciazeniaRobocze.Add(obc);
-                Console.WriteLine("Podaj wartosc PropObciazenieRobocze");
-                ListaObciazeniaRobocze[i].PropObciazenieRobocze = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("PropUdzialCzasowyObciazenia");
-                ListaObciazeniaRobocze[i].PropUdzialCzasowyObciazenia = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Czy chcesz dodać kolejny zestaw danych? Jeśli nie kliknij przycisk End");
-                ++i;
-            }
-            while (Console.ReadKey().Key != ConsoleKey.End);
+            
 
         }
 
@@ -99,7 +80,34 @@ namespace DobórGwintówTocznych
         //{
         //    K1 = 1, K2 = 2, K3 = 3
         //}
+        public void PobierzDane()
+        {
+            SkokGwintu = 10;
+            DlugoscGwintuSruby = 600;
+            DlugoscCzopaLozyskowego = 60;
+            SredniaPredkoscObrotowa = 1000;
+            ZakladanyOkresUzytkowania = 2000;
+            //SkokGwintu = OdczytajInt(DaneKomunikaty.SkokGwintu);
+            //DlugoscGwintuSruby = OdczytajInt(DaneKomunikaty.DlugoscGwintu);
+            //DlugoscCzopaLozyskowego = OdczytajInt(DaneKomunikaty.DlugoscCzopa);
+            //SredniaPredkoscObrotowa = OdczytajInt(DaneKomunikaty.SredniaPredkoscObrotowa);
+            //ZakladanyOkresUzytkowania = OdczytajInt(DaneKomunikaty.OkresUzytkowania);
 
+            int i = 0;
+
+            do
+            {
+                var obc = new ObciazenieRobocze();
+                ListaObciazeniaRobocze.Add(obc);
+                Console.WriteLine("Podaj wartosc PropObciazenieRobocze");
+                ListaObciazeniaRobocze[i].PropObciazenieRobocze = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("PropUdzialCzasowyObciazenia");
+                ListaObciazeniaRobocze[i].PropUdzialCzasowyObciazenia = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Czy chcesz dodać kolejny zestaw danych? Jeśli nie kliknij przycisk End");
+                ++i;
+            }
+            while (Console.ReadKey().Key != ConsoleKey.End);
+        }
         public static int OdczytajInt(string komunikat)
         {
             Console.Write(komunikat);

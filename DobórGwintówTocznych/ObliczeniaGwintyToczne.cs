@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DobórGwintówTocznych
 {
-    public class ObliczeniaGwintyToczne: Dane
+    public class ObliczeniaGwintyToczne
     {
         // Double, float czy decimal?
        
@@ -24,10 +24,11 @@ namespace DobórGwintówTocznych
         public double sztywnoscMechanizmu = 0;
         public MechanizmySrubowoToczne dobranyMechanizm;
 
+        public Dane Dane { get; }
 
-        public ObliczeniaGwintyToczne() : base()
+        public ObliczeniaGwintyToczne(Dane dane)
         {
-
+            Dane = dane;
         }
         public void WykonajObliczenia()
         {
@@ -44,15 +45,15 @@ namespace DobórGwintówTocznych
         
         public double ObliczDlugoscCalkowitaSruby()
         {
-            dlugoscCalkowita = DlugoscGwintuSruby + (2 * DlugoscCzopaLozyskowego);
+            dlugoscCalkowita = Dane.DlugoscGwintuSruby + (2 * Dane.DlugoscCzopaLozyskowego);
             return dlugoscCalkowita;
         }
         //Przemek - jak pobrać dane z listy w klasie Program?
         public double ObliczObciazenieRobocze()
         {
-            for (int i = 0; i < ListaObciazeniaRobocze.Count; i++)
+            for (int i = 0; i < Dane.ListaObciazeniaRobocze.Count; i++)
             {
-                obciazenie += Math.Pow(ListaObciazeniaRobocze[i].PropObciazenieRobocze,3) * ListaObciazeniaRobocze[i].PropUdzialCzasowyObciazenia/100 * Math.Pow(1.3,3);
+                obciazenie += Math.Pow(Dane.ListaObciazeniaRobocze[i].PropObciazenieRobocze,3) * Dane.ListaObciazeniaRobocze[i].PropUdzialCzasowyObciazenia/100 * Math.Pow(1.3,3);
                 
             }
             obciazenie = Math.Ceiling(Math.Pow(obciazenie, (double)1 / 3));
@@ -66,7 +67,7 @@ namespace DobórGwintówTocznych
         }
         public int ObliczOkresUzytkowania()
         {
-            okresUzytk = ZakladanyOkresUzytkowania * SredniaPredkoscObrotowa * 60;
+            okresUzytk = Dane.ZakladanyOkresUzytkowania * Dane.SredniaPredkoscObrotowa * 60;
             return okresUzytk;
         }
 
@@ -90,7 +91,7 @@ namespace DobórGwintówTocznych
 
         public double ObliczSztywnoscSruby()
         {
-            sztywnoscSruby = 168 * (Math.Pow(srednicaRdzenia, 2) / DlugoscGwintuSruby);
+            sztywnoscSruby = 168 * (Math.Pow(srednicaRdzenia, 2) / Dane.DlugoscGwintuSruby);
             return sztywnoscSruby;
         }
 
@@ -106,7 +107,7 @@ namespace DobórGwintówTocznych
             ObliczSztywnoscNakretki();
             ObliczSztywnoscSruby();
             sztywnoscMechanizmu = (double)(1 / sztywnoscSruby) + (double)(1 / sztywnoscNakretki);
-            return (double)(1 / sztywnoscMechanizmu);
+            return (double)Math.Round((1 / sztywnoscMechanizmu),2);
         }
 
 
