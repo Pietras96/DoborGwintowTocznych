@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace DobórGwintówTocznych
 {
     public class ObliczeniaGwintyToczne
     {
-        // Double, float czy decimal?
-       
         public double obciazenie = 0;
         public double naprezenie = 0;
         public double dlugoscCalkowita = 0;
@@ -33,13 +28,11 @@ namespace DobórGwintówTocznych
         public void WykonajObliczenia()
         {
             ObliczDlugoscCalkowitaSruby();
-            ObliczObciazenieRobocze();
             ObliczNaprezenieWstepne();
+            ObliczObciazenieRobocze();
             ObliczOkresUzytkowania();
             ObliczSileOsiowa();
             ObliczNosnoscDynamiczna();
-            Console.WriteLine($"Wyniki Obliczeń: \n długość całkowita śruby = {dlugoscCalkowita} [mm] \n obciążenie robocze = {obciazenie} [N] \n naprężenie wstępne = {naprezenie} [N]");
-            Console.WriteLine($" zakładany okres użytkowania {string.Format("{0:#.##E+00}", okresUzytk)} [h] \n nośność dynamiczna: {nosnoscDynamiczna} [N]");
         }
 
         
@@ -48,7 +41,7 @@ namespace DobórGwintówTocznych
             dlugoscCalkowita = Dane.DlugoscGwintuSruby + (2 * Dane.DlugoscCzopaLozyskowego);
             return dlugoscCalkowita;
         }
-        //Przemek - jak pobrać dane z listy w klasie Program?
+
         public double ObliczObciazenieRobocze()
         {
             for (int i = 0; i < Dane.ListaObciazeniaRobocze.Count; i++)
@@ -110,7 +103,17 @@ namespace DobórGwintówTocznych
             return (double)Math.Round((1 / sztywnoscMechanizmu),2);
         }
 
-
-
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine();
+            sb.AppendLine("Wyniki Obliczeń: ");
+            sb.AppendLine($"    długość całkowita śruby = {dlugoscCalkowita} [mm]");
+            sb.AppendLine($"    obciążenie robocze = {obciazenie} [N]");
+            sb.AppendLine($"    naprężenie wstępne = {naprezenie} [N]");
+            sb.AppendLine($"    zakładany okres użytkowania {string.Format("{0:#.##E+00}", okresUzytk)} [h]");
+            sb.AppendLine($"    nośność dynamiczna: {nosnoscDynamiczna} [N]");
+            return sb.ToString();
+        }
     }
 }

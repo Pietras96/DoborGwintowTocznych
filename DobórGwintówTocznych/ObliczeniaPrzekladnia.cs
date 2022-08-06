@@ -37,7 +37,7 @@ namespace DobórGwintówTocznych
         public double mocNapedowaSilnika = 0;
         public double obciazenieRobocze = 0;
         public double silaOsiowa = 0;
-        public double maxMocNapedowa = 0;
+        public double maxMomentNapedowy = 0;
         public double kwadratPrzelozenia => Math.Pow((double)danePrzekladnia.LiczbaZebowG1 / (double)danePrzekladnia.LiczbaZebowG2, 2);
 
         public void WykonajObliczenia()
@@ -107,12 +107,12 @@ namespace DobórGwintówTocznych
         public double ObliczCalkowityMomentSilnika()
         {
             calkowityMomentSilnika = Math.Round((calkowitaBezwladnoscMechanizmu * danePrzekladnia.Przyspieszenie) + momentNapedowySilnika,2);
+            maxMomentNapedowy = Math.Round(2 * calkowityMomentSilnika, 2);
             return calkowityMomentSilnika;
         }
         public double ObliczMocNapedowaSilnika()
         {
             mocNapedowaSilnika = Math.Round((2 * calkowityMomentSilnika * dane.SredniaPredkoscObrotowa) / 9.55,2);
-            maxMocNapedowa = 2 * mocNapedowaSilnika;
             return mocNapedowaSilnika;
         }
 
@@ -125,12 +125,14 @@ namespace DobórGwintówTocznych
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("Specyfikacja silnika: ");
-            sb.AppendLine($"Typ silnika: silnik prądu stałego z momentem znamionowym > 1.5x{momentNapedowySilnika}");
-            sb.AppendLine($"Maksymalny moment silnika: > 1.5x{}");
-            sb.AppendLine($"");
-            sb.AppendLine($"");
-            sb.AppendLine($"");
+            sb.AppendLine();
+            sb.AppendLine("Specyfikacja silnika: ");
+            sb.AppendLine($"    Typ silnika: silnik prądu stałego z momentem znamionowym > {1.5 * momentNapedowySilnika} [Nm]");
+            sb.AppendLine($"    Maksymalny moment silnika: > {Math.Round(1.5 * maxMomentNapedowy), 1} [Nm]");
+            sb.AppendLine($"    Moc minimalna: >{mocNapedowaSilnika} [W]");
+            sb.AppendLine($"    Moment minimalny: >{calkowityMomentSilnika} [Nm]");
+            sb.AppendLine($"    Prędkość obrotowa: >={dane.SredniaPredkoscObrotowa} [obr/min]");
+            sb.AppendLine($"    Moment bezwladnosci silnika: {string.Format("{0:#.##E+00}", bezwladnoscSilnika)} [kgm^2]");
             return sb.ToString();
         }
     }

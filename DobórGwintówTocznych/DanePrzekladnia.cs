@@ -8,12 +8,6 @@ namespace DobórGwintówTocznych
 {
     class DanePrzekladnia: Dane
     {
-
-        public DanePrzekladnia()
-        {
-            
-
-        }
         public const double wspTarciaProwadnicy = 0.2;
         public const double momentLozyska = 0.1;
         public const double wspolczynnikSprawnosci = 0.8;
@@ -111,17 +105,17 @@ namespace DobórGwintówTocznych
             szerokoscKola = 20;
             liczbaZebowG1 = 35;
             liczbaZebowG2 = 100;
-            //ciezarStolu = OdczytajInt(DaneKomunikaty.ciezarStolu);
-            //ciezarPrzedmiotu = OdczytajInt(DaneKomunikaty.CiezarPrzedmiotu);
-            //przyspieszenie = OdczytajInt(DaneKomunikaty.przyspieszenie);
+            //ciezarStolu = PobierzDane(DaneKomunikaty.ciezarStolu);
+            //ciezarPrzedmiotu = PobierzDane(DaneKomunikaty.CiezarPrzedmiotu);
+            //przyspieszenie = PobierzDane(DaneKomunikaty.przyspieszenie);
             //silaOsiowa = (ciezarPrzedmiotu + ciezarStolu)*10;
-            //srednicaSilnika = OdczytajInt(DaneKomunikaty.srednicaSilnika);
-            //dlugoscSilnika = OdczytajInt(DaneKomunikaty.dlugoscSilnika);
-            //srednicaG1 = OdczytajInt(DaneKomunikaty.srednicaG1);
-            //srednicaG2 = OdczytajInt(DaneKomunikaty.srednicaG2);
-            //szerokoscKola = OdczytajInt(DaneKomunikaty.szerokoscKola);
-            //liczbaZebowG1 = OdczytajInt(DaneKomunikaty.liczbaZebowG1);
-            //liczbaZebowG2 = OdczytajInt(DaneKomunikaty.liczbaZebowG2);
+            //srednicaSilnika = PobierzDane(DaneKomunikaty.srednicaSilnika);
+            //dlugoscSilnika = PobierzDane(DaneKomunikaty.dlugoscSilnika);
+            //srednicaG1 = PobierzDane(DaneKomunikaty.srednicaG1);
+            //srednicaG2 = PobierzDane(DaneKomunikaty.srednicaG2);
+            //szerokoscKola = PobierzDane(DaneKomunikaty.szerokoscKola);
+            //liczbaZebowG1 = PobierzDane(DaneKomunikaty.liczbaZebowG1);
+            //liczbaZebowG2 = PobierzDane(DaneKomunikaty.liczbaZebowG2);
         }
 
 

@@ -7,29 +7,23 @@ namespace DobórGwintówTocznych
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("APLIKACJA DOBORU GWINTÓW TOCZNYCH");
-            //Console.Write("Proszę wybrać sposób łożyskowania (11 - pojedyncze łożyskowanie, 22 - podwójne łożyskowanie): ");
-            //int idLoz = Convert.ToInt32(Console.ReadLine());
-            //int wspLozyskowania = ParametryObliczeniowe.slowWspLozyskowania[idLoz];
+            Console.WriteLine("APLIKACJA DOBORU GWINTÓW TOCZNYCH TYPU FSV");
             var dane = new Dane();
             dane.PobierzDane();
             ObliczeniaGwintyToczne ogt = new ObliczeniaGwintyToczne(dane);
             ogt.WykonajObliczenia();
+            Console.WriteLine(ogt);
             var mechanizm = new DoborMechanizmuSrubowoTocznego(ogt);
             var wynik = mechanizm.WstepnyDoborMechanizmu();
             ogt.dobranyMechanizm = wynik;
             var sztywnosc = ogt.ObliczSztywnoscMechanizmu();
             wynik = mechanizm.KoncowyDoborMechanizmu();
-            //Console.WriteLine(mechanizm);
+            Console.WriteLine(mechanizm);
             var danePrzekladnia = new DanePrzekladnia();
             danePrzekladnia.PobierzDane();
             var obliczeniaPrzekladnia = new ObliczeniaPrzekladnia(dane, danePrzekladnia,ogt, wynik);
             obliczeniaPrzekladnia.WykonajObliczenia();
-            //przekladnia.WykonajObliczenia();
-            Console.WriteLine("ELO");
-
-
-
+            Console.WriteLine(obliczeniaPrzekladnia);
         }
     }
 }

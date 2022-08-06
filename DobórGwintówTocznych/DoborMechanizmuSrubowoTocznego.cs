@@ -29,11 +29,13 @@ namespace DobórGwintówTocznych
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("Dobrano mechanizm: ");
-            sb.AppendLine($"model: {dobranyMechanizm.model}, srednica znamionowa: {dobranyMechanizm.srednicaZnam} [mm]");
-            sb.AppendLine($"skok gwintu: {dobranyMechanizm.skokGwintu} [mm], srednica kulki: {dobranyMechanizm.sredKulki} [mm]");
-            sb.AppendLine($"obieg: {dobranyMechanizm.obiegi}, sztywność mechanizmu: {dobranyMechanizm.sztywnosc} [N/um]");
-            sb.AppendLine($"nośność dynamiczna: {dobranyMechanizm.nosnoscDynamiczna} [N]");
+            sb.AppendLine();
+            sb.AppendLine("Dobrano mechanizm: ");
+            sb.AppendLine($"    model: {dobranyMechanizm.model}, typ nakrętki: FSV");
+            sb.AppendLine($"    srednica znamionowa: {dobranyMechanizm.srednicaZnam} [mm]");
+            sb.AppendLine($"    skok gwintu: {dobranyMechanizm.skokGwintu} [mm], srednica kulki: {dobranyMechanizm.sredKulki} [mm]");
+            sb.AppendLine($"    obieg: {dobranyMechanizm.obiegi}, sztywność mechanizmu: {dobranyMechanizm.sztywnosc} [N/um]");
+            sb.AppendLine($"    nośność dynamiczna: {dobranyMechanizm.nosnoscDynamiczna} [N]");
             return sb.ToString();
         }
 
@@ -51,6 +53,5 @@ namespace DobórGwintówTocznych
 
         public ObliczeniaGwintyToczne Obliczenia { get; }
 
-        private Dane dane;
     }
 }
