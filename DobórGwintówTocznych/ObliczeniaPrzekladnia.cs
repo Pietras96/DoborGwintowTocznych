@@ -112,7 +112,7 @@ namespace DobórGwintówTocznych
         }
         public double ObliczMocNapedowaSilnika()
         {
-            mocNapedowaSilnika = Math.Round((2 * calkowityMomentSilnika * dane.SredniaPredkoscObrotowa) / 9.55,2);
+            mocNapedowaSilnika = Math.Ceiling((2 * calkowityMomentSilnika * dane.SredniaPredkoscObrotowa) / 9.55);
             return mocNapedowaSilnika;
         }
 

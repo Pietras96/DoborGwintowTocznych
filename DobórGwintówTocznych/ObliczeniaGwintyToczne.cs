@@ -99,8 +99,8 @@ namespace DobórGwintówTocznych
             ObliczSredniceRdzenia();
             ObliczSztywnoscNakretki();
             ObliczSztywnoscSruby();
-            sztywnoscMechanizmu = (double)(1 / sztywnoscSruby) + (double)(1 / sztywnoscNakretki);
-            return (double)Math.Round((1 / sztywnoscMechanizmu),2);
+            sztywnoscMechanizmu = (1.0 / sztywnoscSruby) + (1.0 / sztywnoscNakretki);
+            return Math.Round((1.0 / sztywnoscMechanizmu),2);
         }
 
         public override string ToString()

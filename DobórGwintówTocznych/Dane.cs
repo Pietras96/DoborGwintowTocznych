@@ -54,16 +54,11 @@ namespace DobórGwintówTocznych
 
         public void PobierzDane()
         {
-            SkokGwintu = 10;
-            DlugoscGwintuSruby = 600;
-            DlugoscCzopaLozyskowego = 60;
-            SredniaPredkoscObrotowa = 1000;
-            ZakladanyOkresUzytkowania = 2000;
-            //SkokGwintu = PobierzDane(DaneKomunikaty.SkokGwintu);
-            //DlugoscGwintuSruby = PobierzDane(DaneKomunikaty.DlugoscGwintu);
-            //DlugoscCzopaLozyskowego = PobierzDane(DaneKomunikaty.DlugoscCzopa);
-            //SredniaPredkoscObrotowa = PobierzDane(DaneKomunikaty.SredniaPredkoscObrotowa);
-            //ZakladanyOkresUzytkowania = PobierzDane(DaneKomunikaty.OkresUzytkowania);
+            SkokGwintu = PobierzDane(DaneKomunikaty.SkokGwintu);
+            DlugoscGwintuSruby = PobierzDane(DaneKomunikaty.DlugoscGwintu);
+            DlugoscCzopaLozyskowego = PobierzDane(DaneKomunikaty.DlugoscCzopa);
+            SredniaPredkoscObrotowa = PobierzDane(DaneKomunikaty.SredniaPredkoscObrotowa);
+            ZakladanyOkresUzytkowania = PobierzDane(DaneKomunikaty.OkresUzytkowania);
 
             int i = 0;
             bool status = true;

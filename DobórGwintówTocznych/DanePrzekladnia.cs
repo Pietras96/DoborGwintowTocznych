@@ -13,7 +13,7 @@ namespace DobórGwintówTocznych
         public const double wspolczynnikSprawnosci = 0.8;
         public const double ciezarWlasciwyStali = 7850;
 
-        public int silaOsiowa { get; set; }
+        public double silaOsiowa { get; set; }
 
 
         private double ciezarStolu;
@@ -94,28 +94,17 @@ namespace DobórGwintówTocznych
         }
         public void PobierzDane()
         {
-            ciezarStolu = 100;
-            ciezarPrzedmiotu = 50;
-            przyspieszenie = 150;
-            silaOsiowa = 1500;
-            srednicaSilnika = 40;
-            dlugoscSilnika = 160;
-            srednicaG1 = 60;
-            srednicaG2 = 180;
-            szerokoscKola = 20;
-            liczbaZebowG1 = 35;
-            liczbaZebowG2 = 100;
-            //ciezarStolu = PobierzDane(DaneKomunikaty.ciezarStolu);
-            //ciezarPrzedmiotu = PobierzDane(DaneKomunikaty.CiezarPrzedmiotu);
-            //przyspieszenie = PobierzDane(DaneKomunikaty.przyspieszenie);
-            //silaOsiowa = (ciezarPrzedmiotu + ciezarStolu)*10;
-            //srednicaSilnika = PobierzDane(DaneKomunikaty.srednicaSilnika);
-            //dlugoscSilnika = PobierzDane(DaneKomunikaty.dlugoscSilnika);
-            //srednicaG1 = PobierzDane(DaneKomunikaty.srednicaG1);
-            //srednicaG2 = PobierzDane(DaneKomunikaty.srednicaG2);
-            //szerokoscKola = PobierzDane(DaneKomunikaty.szerokoscKola);
-            //liczbaZebowG1 = PobierzDane(DaneKomunikaty.liczbaZebowG1);
-            //liczbaZebowG2 = PobierzDane(DaneKomunikaty.liczbaZebowG2);
+            ciezarStolu = PobierzDane(DaneKomunikaty.ciezarStolu);
+            ciezarPrzedmiotu = PobierzDane(DaneKomunikaty.CiezarPrzedmiotu);
+            przyspieszenie = PobierzDane(DaneKomunikaty.przyspieszenie);
+            silaOsiowa = (ciezarPrzedmiotu + ciezarStolu) * 10;
+            srednicaSilnika = PobierzDane(DaneKomunikaty.srednicaSilnika);
+            dlugoscSilnika = PobierzDane(DaneKomunikaty.dlugoscSilnika);
+            srednicaG1 = PobierzDane(DaneKomunikaty.srednicaG1);
+            srednicaG2 = PobierzDane(DaneKomunikaty.srednicaG2);
+            szerokoscKola = PobierzDane(DaneKomunikaty.szerokoscKola);
+            liczbaZebowG1 = PobierzDane(DaneKomunikaty.liczbaZebowG1);
+            liczbaZebowG2 = PobierzDane(DaneKomunikaty.liczbaZebowG2);
         }
 
 
