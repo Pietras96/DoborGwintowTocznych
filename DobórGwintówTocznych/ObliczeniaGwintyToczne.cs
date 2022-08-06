@@ -28,8 +28,8 @@ namespace DobórGwintówTocznych
         public void WykonajObliczenia()
         {
             ObliczDlugoscCalkowitaSruby();
-            ObliczNaprezenieWstepne();
             ObliczObciazenieRobocze();
+            ObliczNaprezenieWstepne(); 
             ObliczOkresUzytkowania();
             ObliczSileOsiowa();
             ObliczNosnoscDynamiczna();

@@ -21,7 +21,7 @@ namespace DobórGwintówTocznych
             Console.WriteLine(mechanizm);
             var danePrzekladnia = new DanePrzekladnia();
             danePrzekladnia.PobierzDane();
-            var obliczeniaPrzekladnia = new ObliczeniaPrzekladnia(dane, danePrzekladnia,ogt, wynik);
+            var obliczeniaPrzekladnia = new ObliczeniaPrzekladnia(dane, danePrzekladnia, ogt, wynik);
             obliczeniaPrzekladnia.WykonajObliczenia();
             Console.WriteLine(obliczeniaPrzekladnia);
         }
