@@ -27,7 +27,7 @@ namespace DobórGwintówTocznych
             dobranyMechanizm = mechanizm.KoncowyDoborMechanizmu();
             Console.WriteLine(mechanizm);
 
-            //Moduł wykonujący obliczenia oraz dobierający przekładnię do dobranego mechanizmu śrubowo-tocznego
+            //Moduł wykonujący obliczenia oraz dobierający przekładnię do mechanizmu śrubowo-tocznego
             var danePrzekladnia = new DanePrzekladnia();
             danePrzekladnia.PobierzDane();
             var obliczeniaPrzekladnia = new ObliczeniaPrzekladnia(dane, danePrzekladnia, obliczeniaGwintyToczne, dobranyMechanizm);

@@ -31,10 +31,13 @@ namespace DobórGwintówTocznych
             StringBuilder sb = new StringBuilder();
             sb.AppendLine();
             sb.AppendLine("Dobrano mechanizm: ");
-            sb.AppendLine($"    model: {dobranyMechanizm.model}, typ nakrętki: FSV");
+            sb.AppendLine($"    model: {dobranyMechanizm.model}");
+            sb.AppendLine($"    typ nakrętki: FSV");
             sb.AppendLine($"    srednica znamionowa: {dobranyMechanizm.srednicaZnam} [mm]");
-            sb.AppendLine($"    skok gwintu: {dobranyMechanizm.skokGwintu} [mm], srednica kulki: {dobranyMechanizm.sredKulki} [mm]");
-            sb.AppendLine($"    obieg: {dobranyMechanizm.obiegi}, sztywność mechanizmu: {dobranyMechanizm.sztywnosc} [N/um]");
+            sb.AppendLine($"    skok gwintu: {dobranyMechanizm.skokGwintu} [mm], ");
+            sb.AppendLine($"    srednica kulki: {dobranyMechanizm.sredKulki} [mm]");
+            sb.AppendLine($"    obieg: {dobranyMechanizm.obiegi}");
+            sb.AppendLine($"    sztywność mechanizmu: {dobranyMechanizm.sztywnosc} [N/um]");
             sb.AppendLine($"    nośność dynamiczna: {dobranyMechanizm.nosnoscDynamiczna} [N]");
             return sb.ToString();
         }

@@ -94,6 +94,7 @@ namespace DobórGwintówTocznych
         }
         public void PobierzDane()
         {
+            Console.WriteLine("\n ETAP DOBORU UKŁADU NAPĘDOWEGO \n");
             ciezarStolu = PobierzDane(DaneKomunikaty.ciezarStolu);
             ciezarPrzedmiotu = PobierzDane(DaneKomunikaty.CiezarPrzedmiotu);
             przyspieszenie = PobierzDane(DaneKomunikaty.przyspieszenie);

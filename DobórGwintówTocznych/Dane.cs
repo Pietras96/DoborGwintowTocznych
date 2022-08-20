@@ -31,7 +31,7 @@ namespace DobórGwintówTocznych
             get { return dlugoscCzopaLozyskowego; }
             set { if (value > 0) dlugoscCzopaLozyskowego = value; }
         }
-        private int sredniaPredkoscObrotowa = 1000;
+        private int sredniaPredkoscObrotowa;
 
         public int SredniaPredkoscObrotowa
         {
@@ -39,7 +39,7 @@ namespace DobórGwintówTocznych
             set { if (value > 0) sredniaPredkoscObrotowa = value; }
         }
 
-        private int zakladanyOkresUzytkowania = 2000;
+        private int zakladanyOkresUzytkowania;
 
         public int ZakladanyOkresUzytkowania
         {
@@ -71,11 +71,13 @@ namespace DobórGwintówTocznych
                     status = true;
                     var obc = new ObciazenieRobocze();
                     ListaObciazeniaRobocze.Add(obc);
-                    Console.WriteLine("Podaj wartosc PropObciazenieRobocze");
+                    Console.WriteLine($"\n OBCIĄŻENIA ROBOCZE - ZESTAW DANYCH {i+1}:");
+                    Console.Write("Podaj wartosc obciazenia roboczego [N]: ");
                     ListaObciazeniaRobocze[i].PropObciazenieRobocze = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("PropUdzialCzasowyObciazenia");
+                    Console.Write("Podaj udzial czasowy obciazenia [%]: ");
                     ListaObciazeniaRobocze[i].PropUdzialCzasowyObciazenia = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Czy chcesz dodać kolejny zestaw danych? Jeśli nie kliknij przycisk End");
+                    Console.WriteLine("------------------");
                     ++i;
                 }
                 else if(przycisk == ConsoleKey.End){

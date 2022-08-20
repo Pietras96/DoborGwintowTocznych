@@ -111,7 +111,7 @@ namespace DobórGwintówTocznych
             sb.AppendLine($"    długość całkowita śruby = {dlugoscCalkowita} [mm]");
             sb.AppendLine($"    obciążenie robocze = {obciazenie} [N]");
             sb.AppendLine($"    naprężenie wstępne = {naprezenie} [N]");
-            sb.AppendLine($"    zakładany okres użytkowania {string.Format("{0:#.##E+00}", okresUzytk)} [h]");
+            sb.AppendLine($"    zakładany okres użytkowania {string.Format("{0:#.##E+00}", okresUzytk)} [obr]");
             sb.AppendLine($"    nośność dynamiczna: {nosnoscDynamiczna} [N]");
             return sb.ToString();
         }
